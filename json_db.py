@@ -22,9 +22,9 @@ class DB():
             print("[DB] Se produjo un error el proceso de actualización.")
 
     def __init__(self):
-        self._dbPath = os.path.dirname(os.path.abspath(__file__))
+        self._dbPath = os.path.dirname(os.path.abspath(__file__)) # obtener la ruta del archivo actual
 
-        local_db = self._getLocalDB()
+        local_db = self._getLocalDB() # obtener la base de datos local
         if local_db != None:
             self._db = local_db
             print("[DB] Obtenida correctamente.")
@@ -33,7 +33,7 @@ class DB():
             self._updateLocalDB()
             print("[DB] Creada correctamente.")
 
-    def insert(self, element):
+    def insert(self, element): # insertar un nuevo elemento (diccionario)
         if (isinstance(element, dict)):
             data = {'uid': str(uuid4())} | element
             self._db.append(data)
