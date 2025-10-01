@@ -244,7 +244,14 @@ class TaskManagerGUI:
         def update_task():
             name = name_var.get().strip()
             status = 0 if status_var.get() == "Completada" else 1
-            progress = progress_var.get()
+
+            # Bloquear o habilitar el slider según el estado inicial
+            
+            if status == 0:
+                progress = 100
+                progress_scale.state(["disabled"])
+            else:
+                progress = progress_var.get()
             
             if not name:
                 messagebox.showerror("Error", "El nombre de la tarea es obligatorio.")
@@ -258,7 +265,9 @@ class TaskManagerGUI:
                 self.refresh_task_list()
             else:
                 messagebox.showerror("Error", "No se pudo actualizar la tarea.")
-        
+
+       
+
         def cancel():
             dialog.destroy()
         
