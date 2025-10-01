@@ -19,7 +19,6 @@ class TaskManager:
         try:
             return self.db.get(index) # retorno la tarea
         except IndexError:
-            print("[TaskManager] No existe la tarea en esa posición.") # mensaje de error ya que no existe la tarea
             return None
 
     def update_task(self, index, name=None, status=None, progress=None): # actualizar tarea por índice
@@ -38,7 +37,7 @@ class TaskManager:
         try:
             self.db.delete(index) # elimino la tarea
         except IndexError:
-            print("[TaskManager] No se pudo eliminar, índice inválido.") # mensaje de error ya que no existe la tarea
+            pass # Falla silenciosamente si el índice es inválido
 
     def list_tasks(self):
         return [self.db.get(i) for i in range(len(self.db._db))] # retorno todas las tareas en la base de datos
