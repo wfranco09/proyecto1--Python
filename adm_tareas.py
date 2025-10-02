@@ -31,6 +31,8 @@ class TaskManager:
             if progress is not None: # si se proporciona un nuevo progreso, se actualiza
                 if progress == 100:
                     task["estatus"] = 0
+                else:
+                    task["estatus"] = 1
                 task["progreso"] = progress
             self.db.update(index, task)
             return task # retorno la tarea actualizada
