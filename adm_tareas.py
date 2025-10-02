@@ -40,4 +40,4 @@ class TaskManager:
             pass # Falla silenciosamente si el índice es inválido
 
     def list_tasks(self):
-        return [self.db.get(i) for i in range(len(self.db._db))] # retorno todas las tareas en la base de datos
+        return self.db.getAll() # retorno todas las tareas en la base de datos
