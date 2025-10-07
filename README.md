@@ -1,4 +1,4 @@
-# 🚀 **<Nombre del Equipo>**
+# 🚀 **Pythoneers.AI** 🚀
 
 ## 👥 **Integrantes**
 - **Arturo Rodríguez** – Coordinador / Programador  
