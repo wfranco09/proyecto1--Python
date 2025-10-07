@@ -8,7 +8,7 @@
 
 **Integrantes:**
 - 🧠 **Arturo Rodríguez** – Coordinador / Programador  
-- 💻 **Luis García** – Programador Principal  
+- 💻 **Luis García** – <em> Programador Principal </em>  
 - 🧩 **Winston Franco** – Programador / Documentación
 - 🎨 **Isaac Escobar** – Programador Front-End  
 
