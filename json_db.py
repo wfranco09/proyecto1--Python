@@ -2,7 +2,7 @@ import os
 import json
 from uuid import uuid4
 
-class DB():
+class DB:
 
     def _getLocalDB(self):
         try:
@@ -41,7 +41,12 @@ class DB():
             raise TypeError("Solo se permiten diccionarios para el método insert")
 
     def get(self, index):
-        return self._db[index]
+        db = self._getLocalDB()
+        return db[index]
+
+    def getAll(self):
+        db = self._getLocalDB()
+        return db
 
     def update(self, index, data):
         self._db[index] = data
@@ -57,3 +62,6 @@ class DB():
     
     def __str__(self):
         return str(self._db)
+    
+    def __len__(self):
+        return int(len(self._db))
