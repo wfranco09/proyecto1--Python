@@ -1,48 +1,56 @@
-# 🚀 **Pythoneers.AI** 🚀
-
-## 👥 **Integrantes**
-- **Arturo Rodríguez** – Coordinador / Programador  
-- **Luis García** – Programador Principal  
-- **Winston Franco** – Programador / Documentación
-- **Isaac Escobar** – Programador Front-End  
+<h1 align="center">⏱️ <span style="color:#0078FF">Planitly</span> — Cada hora cuenta</h1>
+<h3 align="center"> Proyecto Python | Samsung Innovation Campus 2025</h3>
 
 ---
 
-## 🧠 **Descripción del Proyecto**
-**Planitly** es una aplicación diseñada para **mejorar la productividad empresarial** al permitir que los empleadores asignen tareas diarias, definan tiempos de ejecución y midan el uso real de la jornada laboral de cada colaborador.  
-Con esta herramienta, las empresas pueden **optimizar la carga de trabajo**, **monitorear la eficiencia** y **potenciar el desarrollo interno** de sus equipos.
+## 🧑‍💻 **Equipo**
+**<Nombre Pythoneers.AI>**
+
+👥 **Integrantes:**
+- 🧠 **Arturo Rodríguez** – Coordinador / Programador  
+- 💻 **Luis García** – Programador Principal  
+- 🧩 **Winston Franco** – Programador / Documentación
+- 🎨 **Isaac Escobar** – Programador Front-End  
 
 ---
 
-## 🏗️ **Planteamiento del Problema**
-Actualmente, muchas empresas no cuentan con una forma precisa de **saber en qué se utiliza el tiempo laboral** o **qué colaboradores están disponibles** para nuevas tareas.  
-Esto genera **ineficiencia**, **retrasos** y **falta de visibilidad organizacional**.  
-Planitly busca resolver esa incertidumbre mediante una plataforma de control y seguimiento del tiempo basada en tareas.
+## 💡 **Descripción del Proyecto**
+**Planitly** es una aplicación diseñada para **medir y optimizar la productividad empresarial**, permitiendo a los empleadores **crear tareas diarias**, definir tiempos y **monitorear el uso del tiempo laboral** de cada colaborador.  
+Busca generar un equilibrio entre **eficiencia, organización y desarrollo del talento** dentro de las empresas.
 
 ---
 
-## 🎯 **Objetivo**
-Desarrollar una aplicación que permita **gestionar, monitorear en tiempo real y optimizar el tiempo de trabajo** dentro de una empresa, impulsando la productividad y fomentando la capacitación de los colaboradores.
+## ⚙️ **Planteamiento del Problema**
+Actualmente, muchas empresas enfrentan **falta de visibilidad sobre las tareas y tiempos de sus colaboradores**, lo que provoca **ineficiencias y retrasos** en sus operaciones.  
+**Planitly** surge como una solución que **controla, organiza y distribuye la carga laboral**, brindando métricas claras y útiles para la toma de decisiones.
 
 ---
 
-## 🛠️ **Herramientas Utilizadas**
-| Herramienta | Descripción |
-|--------------|-------------|
-| 🐍 **Python** | Lenguaje principal para el desarrollo del backend y la lógica del sistema. |
-| 💻 **Visual Studio Code** | Entorno de desarrollo utilizado por el equipo. |
-| 🌐 **GitHub** | Control de versiones, trabajo colaborativo y despliegue del repositorio. |
+## 🎯 **Objetivo General**
+Desarrollar una aplicación que **gestione y mida la productividad** de los colaboradores, permitiendo que las empresas **aprovechen al máximo cada hora de trabajo** y fomenten la **mejora continua**.
 
 ---
 
-## 💡 **Breve Explicación del Proyecto**
-Planitly permite a los empleadores **crear tareas diarias** con un **tiempo estimado**, visualizar el progreso y **monitorear el rendimiento general** del equipo.  
-Además, la aplicación facilitará **la toma de decisiones basadas en datos reales**, apoyando a las empresas en la planificación estratégica de su capital intelectual.
+## 🧰 **Herramientas Utilizadas**
+| 🛠️ Herramienta | 💬 Descripción |
+|------------------|----------------|
+| 🐍 **Python** | Lenguaje base para la lógica y el backend del proyecto. |
+| 💻 **Visual Studio Code** | Editor de código principal usado por el equipo. |
+| 🌐 **GitHub** | Plataforma de control de versiones y colaboración en equipo. |
 
 ---
+
+## 🧭 **Breve Explicación del Proyecto**
+**Planitly** permite a los empleadores **asignar tareas con tiempo estimado**, **monitorear el progreso** y **evaluar el rendimiento de cada colaborador**.  
+El sistema ayuda a **identificar brechas de productividad**, **gestionar disponibilidad** y **mejorar la eficiencia organizacional** mediante el seguimiento inteligente del tiempo.
+
+---
+
+## 🖼️ **Vista del Proyecto (Ejemplo)**
+> *(Agrega aquí imágenes del diseño, interfaz o flujo de tareas si lo deseas)*
 
 ```bash
-📂 Estructura del repositorio:
+📦 Estructura del Proyecto
 │
 ├── main.py
 ├── modules/
