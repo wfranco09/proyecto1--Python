@@ -37,7 +37,7 @@ Desarrollar una aplicación que permita **gestionar, monitorear en tiempo real y
 
 ## 💡 **Breve Explicación del Proyecto**
 Planitly permite a los empleadores **crear tareas diarias** con un **tiempo estimado**, visualizar el progreso y **monitorear el rendimiento general** del equipo.  
-Además, la aplicación facilitará **la toma de decisiones basadas en datos reales**, apoyando a las empresas en la planificación estratégica de su talento humano.
+Además, la aplicación facilitará **la toma de decisiones basadas en datos reales**, apoyando a las empresas en la planificación estratégica de su capital intelectual.
 
 ---
 
