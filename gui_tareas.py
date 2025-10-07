@@ -307,18 +307,24 @@ class TaskManagerGUI:
             df = pd.read_csv("carpeta_data/data_analitica.csv")
             completed = df[df["estatus"] == 0].shape[0]
             pending = df[df["estatus"] == 1].shape[0]
+
             if completed + pending == 0:
                 messagebox.showinfo("Información", "No hay tareas para graficar.")
                 return
 
-            fig, ax = plt.subplots(figsize=(5,5))
-            ax.pie([completed, pending], labels=["Completadas", "Pendientes"],
-                   autopct="%1.1f%%", startangle=90, colors=["green", "red"])
+            # Crear figura
+            fig, ax = plt.subplots(figsize=(5, 5))
+            ax.pie(
+                [completed, pending],
+                labels=["Completadas", "Pendientes"],
+                autopct="%1.1f%%",
+                startangle=90,
+                colors=["green", "red"]
+            )
             ax.set_title("Estado de las Tareas")
 
-            canvas = FigureCanvasTkAgg(fig, master=self.root)
-            canvas.draw()
-            canvas.get_tk_widget().grid(row=3, column=0, columnspan=3, pady=20)
+            # Mostrar la gráfica en una ventana independiente
+            plt.show()
         except FileNotFoundError:
             messagebox.showerror("Error", "Primero genere el CSV con 'Exportar CSV'.")
 
