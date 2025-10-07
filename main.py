@@ -26,6 +26,8 @@ print(tm.list_tasks()) """
 
 from gui_tareas import TaskManagerGUI
 import tkinter as tk
+from adm_tareas import TaskManager
+
 
 def main():
     # Crear la ventana principal
@@ -36,6 +38,7 @@ def main():
     
     # Iniciar el bucle principal de la interfaz gráfica
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()

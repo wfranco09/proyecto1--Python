@@ -1,5 +1,6 @@
 from json_db import DB
 from datetime import datetime
+from data_logger import DataLogger
 
 class TaskManager:
     def __init__(self):
@@ -21,6 +22,10 @@ class TaskManager:
             task["progreso"] = int(task.get("progreso", 0))
             task["estatus"] = int(task.get("estatus", 1))
         return task
+
+    def export_to_csv(self, path="carpeta_data/data_analitica.csv"):
+        logger = DataLogger(path)
+        logger.save_tasks(self.list_tasks())
 
     # --------------------------
     # CRUD de tareas principales

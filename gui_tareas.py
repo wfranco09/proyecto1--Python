@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 from adm_tareas import TaskManager
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class TaskManagerGUI:
     def __init__(self, root):
@@ -44,7 +47,8 @@ class TaskManagerGUI:
         ttk.Button(button_frame, text="Limpiar Todas", command=self.clear_all_tasks).grid(row=3, column=0, pady=5, sticky=tk.W)
         ttk.Button(button_frame, text="Actualizar Lista", command=self.refresh_task_list).grid(row=4, column=0, pady=5, sticky=tk.W)
         ttk.Button(button_frame, text="Subtareas", command=self.manage_subtasks_dialog).grid(row=5, column=0, pady=5, sticky=tk.W)
-
+        ttk.Button(button_frame, text="Ver Gráfico", command=self.show_task_graph).grid(row=6, column=0, pady=5, sticky=tk.W)
+        ttk.Button(button_frame, text="Exportar CSV", command=self.export_csv).grid(row=7, column=0, pady=5, sticky=tk.W)
         # Frame para la lista de tareas
         list_frame = ttk.Frame(main_frame)
         list_frame.grid(row=1, column=1, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10)
@@ -54,6 +58,7 @@ class TaskManagerGUI:
         # Treeview para mostrar las tareas
         columns = ("Índice", "Nombre", "Estado", "Progreso", "Creado por", "Fecha")
         self.task_tree = ttk.Treeview(list_frame, columns=columns, show="headings", height=15)
+
 
         # Configurar las columnas
         self.task_tree.heading("Índice", text="Índice")
@@ -165,8 +170,9 @@ class TaskManagerGUI:
 
             # Crear la tarea
             self.task_manager.create_task(name, creator)
-            messagebox.showinfo("Éxito", f"Tarea '{name}' creada correctamente.")
             dialog.destroy()
+            messagebox.showinfo("Éxito", f"Tarea '{name}' creada correctamente.")
+           
             self.refresh_task_list()
 
         def cancel():
@@ -269,8 +275,9 @@ class TaskManagerGUI:
                 updated_task = self.task_manager.update_task(index, name=name, status=status, progress=progress)
 
             if updated_task:
-                messagebox.showinfo("Éxito", "Tarea actualizada correctamente.")
                 dialog.destroy()
+                messagebox.showinfo("Éxito", "Tarea actualizada correctamente.")
+                
                 self.refresh_task_list()
             else:
                 messagebox.showerror("Error", "No se pudo actualizar la tarea.")
@@ -287,6 +294,33 @@ class TaskManagerGUI:
 
         # Foco en el primer campo
         name_entry.focus()
+    
+    def export_csv(self):
+        try:
+            self.task_manager.export_to_csv()
+            messagebox.showinfo("Éxito", "CSV generado correctamente en 'carpeta_data/data_analitica.csv'.")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo generar el CSV:\n{str(e)}")
+
+    def show_task_graph(self):
+        try:
+            df = pd.read_csv("carpeta_data/data_analitica.csv")
+            completed = df[df["estatus"] == 0].shape[0]
+            pending = df[df["estatus"] == 1].shape[0]
+            if completed + pending == 0:
+                messagebox.showinfo("Información", "No hay tareas para graficar.")
+                return
+
+            fig, ax = plt.subplots(figsize=(5,5))
+            ax.pie([completed, pending], labels=["Completadas", "Pendientes"],
+                   autopct="%1.1f%%", startangle=90, colors=["green", "red"])
+            ax.set_title("Estado de las Tareas")
+
+            canvas = FigureCanvasTkAgg(fig, master=self.root)
+            canvas.draw()
+            canvas.get_tk_widget().grid(row=3, column=0, columnspan=3, pady=20)
+        except FileNotFoundError:
+            messagebox.showerror("Error", "Primero genere el CSV con 'Exportar CSV'.")
 
     def delete_task(self):
         """Eliminar la tarea seleccionada"""
@@ -411,7 +445,7 @@ class TaskManagerGUI:
         ttk.Button(frame, text="Agregar", command=add_subtask).grid(row=1, column=0, pady=10, sticky=tk.W)
         ttk.Button(frame, text="Completado/Pendiente", command=toggle_subtask).grid(row=1, column=1, pady=10, sticky=tk.W)
         ttk.Button(frame, text="Eliminar", command=delete_subtask).grid(row=1, column=2, pady=10, sticky=tk.W)
-
+        ttk.Button(frame, text="Cerrar", command=dialog.destroy).grid(row=3, column=0, pady=10, sticky=tk.E)
         info = ttk.Label(frame, text="")
         info.grid(row=2, column=0, columnspan=3, sticky=tk.W, pady=(8, 0))
 
@@ -425,3 +459,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
