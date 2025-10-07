@@ -83,13 +83,13 @@ class TaskManager:
 
     def list_tasks(self):
         """Devuelve todas las tareas, recalculando progreso/estatus si tienen subtareas."""
-        tasks = [self.db.get(i) for i in range(len(self.db._db))]
+        tasks = self.db.getAll()
         for i, t in enumerate(tasks):
             recalculated = self._recalc_progress_and_status(t)
             if recalculated != t:
                 self.db.update(i, recalculated)
         # devolver fresco desde DB
-        return [self.db.get(i) for i in range(len(self.db._db))]
+        return self.db.getAll()
 
     # --------------------------
     # Subtareas
