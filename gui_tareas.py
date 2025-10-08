@@ -304,9 +304,9 @@ class TaskManagerGUI:
 
     def show_task_graph(self):
         try:
-            df = pd.read_csv("carpeta_data/data_analitica.csv")
-            completed = df[df["estatus"] == 0].shape[0]
-            pending = df[df["estatus"] == 1].shape[0]
+            tasks = self.task_manager.list_tasks()
+            completed = sum(1 for task in tasks if task["estatus"] == 0)
+            pending = sum(1 for task in tasks if task["estatus"] == 1)
 
             if completed + pending == 0:
                 messagebox.showinfo("Información", "No hay tareas para graficar.")
