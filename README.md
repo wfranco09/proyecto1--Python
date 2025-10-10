@@ -46,6 +46,60 @@ El sistema ayuda a **identificar brechas de productividad**, **gestionar disponi
 
 ---
 
+## **Instalación y Configuración**
+
+### **Prerrequisitos**
+- Python 3.8 o superior instalado en el sistema
+- Git (para clonar el repositorio)
+
+### **Configuración del Entorno Virtual**
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/wfranco09/proyecto1--Python.git
+   cd proyecto1--Python
+   ```
+
+2. **Crear el entorno virtual:**
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activar el entorno virtual:**
+   
+   **En macOS/Linux:**
+   ```bash
+   source venv/bin/activate
+   ```
+   
+   **En Windows:**
+   ```bash
+   venv\Scripts\activate
+   ```
+
+4. **Instalar las dependencias:**
+   ```bash
+   pip install -r requirements.dev.txt
+   ```
+
+5. **Ejecutar la aplicación:**
+   ```bash
+   python main.py
+   ```
+
+### **Dependencias del Proyecto**
+- **pandas**: Para manejo y análisis de datos
+- **matplotlib**: Para generación de gráficos y visualizaciones
+- **tkinter**: Para la interfaz gráfica de usuario (incluido con Python)
+
+### **Desactivar el Entorno Virtual**
+Cuando termines de trabajar en el proyecto, puedes desactivar el entorno virtual:
+```bash
+deactivate
+```
+
+---
+
 ```bash
 📦 Estructura del Proyecto
 │
@@ -53,3 +107,5 @@ El sistema ayuda a **identificar brechas de productividad**, **gestionar disponi
 ├── modules/
 ├── data/
 └── README.md
+
+
